@@ -561,37 +561,11 @@ io.on(
 // START SERVER
 // ============================================
 
-const PORT =
-    process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
-
-server.listen(
-    PORT,
-    () => {
-
-        console.log("");
-
-        console.log(
-            "🚀 ReviveAI Backend Started"
-        );
-
-        console.log(
-            `🌐 http://localhost:${PORT}`
-        );
-
-        console.log(
-            "🧠 AI Recovery Engine: ACTIVE"
-        );
-
-        console.log(
-            "⚡ Real-Time Events: ACTIVE"
-        );
-
-        console.log(
-            "🔌 Socket.IO: ACTIVE"
-        );
-
-        console.log("");
-
-    }
-);
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 ReviveAI Backend Started on port ${PORT}`);
+  console.log("🤖 AI Recovery Engine: ACTIVE");
+  console.log("⚡ Real-Time Events: ACTIVE");
+  console.log("🔌 Socket.IO: ACTIVE");
+});
