@@ -15,19 +15,27 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: [
+            "http://localhost:5173",
+            "https://revive-ai-beta.vercel.app"
+        ],
         methods: ["GET", "POST"],
+        credentials: true
     },
 });
-
 
 // ============================================
 // MIDDLEWARE
 // ============================================
 
-app.use(cors());
-
-app.use(express.json());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://revive-ai-beta.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+}));
 
 
 // ============================================
