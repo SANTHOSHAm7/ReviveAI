@@ -263,6 +263,19 @@ function analyzeRecovery(payment) {
 
 
 // ============================================
+// ROOT TEST
+// ============================================
+
+app.get("/", (req, res) => {
+    res.json({
+        status: "online",
+        service: "ReviveAI Backend",
+        message: "ReviveAI API is running 🚀"
+    });
+});
+
+
+// ============================================
 // HEALTH CHECK
 // ============================================
 
@@ -289,7 +302,6 @@ app.get(
 
     }
 );
-
 
 // ============================================
 // RAZORPAY WEBHOOK
